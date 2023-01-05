@@ -32,6 +32,7 @@ export REPLICATE_API_TOKEN=your_api_token
 4. Run the script using the following command:
 
 ```bash
+
 python videovision.py
 ```
 5. When prompted, enter the file name of the video you want to remaster. 
@@ -44,3 +45,6 @@ The script will then convert the video into individual frames, send each frame t
 - This script assumes that the input video is in the same directory as the script. 
 - The output video will be in MP4 format and will have the same frame rate as the input video.
 
+# Disclaimer
+
+you can edit a minimum amount of images through this free api, you can get the paid one if you have a big file
