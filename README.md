@@ -46,5 +46,4 @@ The script will then convert the video into individual frames, send each frame t
 - The output video will be in MP4 format and will have the same frame rate as the input video.
 
 # Disclaimer
-
-you can edit a minimum amount of images through this free api, you can get the paid one if you have a big file
+With this free API, you can edit a limited number of images. If you have a large number of files, you can purchase the paid version of the API
