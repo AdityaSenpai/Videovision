@@ -44,4 +44,3 @@ The script will then convert the video into individual frames, send each frame t
 - This script assumes that the input video is in the same directory as the script. 
 - The output video will be in MP4 format and will have the same frame rate as the input video.
 
-I hope this `README.md` file helps you understand how to use this script! If you have any questions or run into any issues, please don't hesitate to ask.
