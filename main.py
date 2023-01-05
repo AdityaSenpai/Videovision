@@ -1,4 +1,4 @@
-import cv2,os,replicate,base64,requests,glob,time
+import cv2,os,replicate,base64,requests,glob,time,ffmpeg
 
 api_token = "a1c2a87299a9d985c83848a8e2dfa300479ddb49"
 os.environ["REPLICATE_API_TOKEN"] = api_token
@@ -125,3 +125,30 @@ for image in images:
     print(f"{round((i/len(images))*100)}% Completed!\n{time_remaining} remaining!")
 frames2video()
 
+
+input_filename = 'output.avi'
+output_filename = 'output.mp4'
+
+(
+    ffmpeg
+    .input(input_filename)
+    .output(output_filename, c='copy', f='mp4')
+    .overwrite_output()
+    .run()
+)
+input_file = "input.mp4"
+output_file = "output.mp3"
+
+command = ['ffmpeg', '-i', input_file, output_file]
+subprocess.run(command)
+
+input_video = "output.mp4"
+input_audio = "output.mp3"
+output_file = "final.mp4"
+
+command = ['ffmpeg', '-i', input_video, '-i', input_audio, '-c', 'copy', output_file]
+subprocess.run(command)
+
+os.system('rm output.mp3')
+os.system('rm output.mp4')
+os.system('rm output.avi')
