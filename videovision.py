@@ -4,7 +4,6 @@ api_token = "your_API"
 os.environ["REPLICATE_API_TOKEN"] = api_token
 model = replicate.models.get("tencentarc/gfpgan")
 version = model.versions.get("9283608cc6b7be6b65a8e44983db012355fde4132009bf99d976b2f0896856a3")
-
 input_video= input("Enter the file name: ")
 
 def frames2video():
@@ -136,7 +135,7 @@ output_filename = 'output.mp4'
     .overwrite_output()
     .run()
 )
-input_file = "input.mp4"
+input_file = input_video
 output_file = "output.mp3"
 
 command = ['ffmpeg', '-i', input_file, output_file]
@@ -149,6 +148,6 @@ output_file = "final.mp4"
 command = ['ffmpeg', '-i', input_video, '-i', input_audio, '-c', 'copy', output_file]
 subprocess.run(command)
 
-os.system('rm output.mp3')
-os.system('rm output.mp4')
-os.system('rm output.avi')
+os.system('del output.mp3')
+os.system('del output.mp4')
+os.system('del output.avi')
